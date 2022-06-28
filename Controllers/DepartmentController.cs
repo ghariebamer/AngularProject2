@@ -19,8 +19,17 @@ namespace WebApplication1.Controllers
 
         public IActionResult getDepartments()
         {
-            var list = dep.getDepartments();
-            return Ok(list);
+            try
+            {
+                var list = dep.getDepartments();
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+           
         }
 
 
@@ -28,16 +37,36 @@ namespace WebApplication1.Controllers
 
         public IActionResult getDepartmentsbyId( int id)
         {
-            var list = dep.getDepartment(id);
-            return Ok(list);
+            try
+            {
+                var list = dep.getDepartment(id);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+
+            }
+          
         }
 
 
         [HttpPut,Route("UpdateDepartment")]
         public IActionResult UPdateDepartment(Department department)
         {
-            var list = dep.EditDepartment(department);
-            return Ok(list);    
+            try
+            {
+                var list = dep.EditDepartment(department);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+                
+            }
+             
 
         }
 
@@ -45,16 +74,35 @@ namespace WebApplication1.Controllers
 
         public IActionResult CreateDepartment(Department department)
         {
-            dep.createDepartment(department);
-            return Ok("Created Successfully");
+            try
+            {
+                dep.createDepartment(department);
+                return Ok("Created Successfully");
+            }
+            catch (Exception ex)
+            {
+
+
+                return BadRequest(ex.Message);
+            }
+           
         }
 
         [HttpDelete,Route("DeleteDepartment")]
 
         public IActionResult DeleteDepartment(int id)
         {
-             dep.deleteDepartment(id);
-            return Ok("your Department is deleted");
+            try
+            {
+                dep.deleteDepartment(id);
+                return Ok("your Department is deleted");
+            }
+            catch (Exception ex) { 
+            
+            return BadRequest(ex.Message);
+            
+            }
+            
         }
     }
 }
