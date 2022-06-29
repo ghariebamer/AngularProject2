@@ -110,7 +110,7 @@ namespace WebApplication1.Repositry
 
         public void deleteDepartment(int id)
         {
-            dynamic resultAll;
+           
 
             if (id != null)
             {
@@ -123,7 +123,7 @@ namespace WebApplication1.Repositry
 
                 con.Close();
             }
-       
+            
             
 
 

@@ -1,4 +1,6 @@
 using WebApplication1;
+using WebApplication1.interfaces;
+using WebApplication1.Models;
 using WebApplication1.Repositry;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,7 @@ builder.Services.AddCors(option =>
 });
 
 builder.Services.AddScoped<IDepartment, DepartmentRepo>();
+builder.Services.AddScoped<IEmployee, EmployeeRepo>();
 var app = builder.Build();
 
 
