@@ -6,6 +6,10 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Repositry
 {
+
+        
+
+    
     public class EmployeeRepo : IEmployee
     {
         public List<Employee> Employees { get; set; }
@@ -13,14 +17,17 @@ namespace WebApplication1.Repositry
         public Employee employee;
 
         private string connection;
-        public EmployeeRepo(IOptions<Connection> db)
+        private readonly IWebHostEnvironment environment;
+
+        public EmployeeRepo(IOptions<Connection> db, IWebHostEnvironment _environment)
         {
             connection = db.Value.connectionstring;
+            environment = _environment;
         }
 
         public void createEmployee(Employee employee)
         {
-            if(employee != null)
+            if (employee != null)
             {
                 SqlConnection con = new SqlConnection(connection);
                 SqlCommand cmd = new SqlCommand("sp_CreateEmployee", con);
@@ -83,7 +90,7 @@ namespace WebApplication1.Repositry
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@id", id));
             con.Open();
-            SqlDataReader rd= cmd.ExecuteReader();  
+            SqlDataReader rd = cmd.ExecuteReader();
 
             while (rd.Read())
             {
@@ -112,23 +119,50 @@ namespace WebApplication1.Repositry
             while (rd.Read())
             {
 
-                List<Employee> employees= new List<Employee>();
+                List<Employee> employees = new List<Employee>();
                 employees.Add(new Employee()
                 {
                     Id = Convert.ToInt32(rd["id"]),
                     Name = rd["Name"].ToString(),
-                    Department= rd["Department"].ToString(),
-                    dateofjoining= rd["dateofjoining"].ToString(),
-                    photofileName= rd["PhotoName"].ToString(),
+                    Department = rd["Department"].ToString(),
+                    dateofjoining = rd["dateofjoining"].ToString(),
+                    photofileName = rd["PhotoName"].ToString(),
                     CreateDate = rd["createddate"].ToString(),
-                    CreateBy= Convert.ToInt32(rd["createBy"])
+                    CreateBy = Convert.ToInt32(rd["createBy"])
 
                 });
                 ;
-                Employees= employees;
+                Employees = employees;
             }
             return Employees;
 
+        }
+
+        public string UploadImage(IFormFile file)
+        {
+            try { 
+                    if (file.Length > 0)
+                    {
+                        if(!Directory.Exists(environment.WebRootPath+ "~\\Photos\\"))
+                        {
+                            Directory.CreateDirectory(environment.WebRootPath + "~\\Photos\\");
+                        }
+                        using(FileStream filestream=System.IO.File.Create(environment.WebRootPath + "~\\Photos\\" + file.FileName))
+                        {
+                            file.CopyTo(filestream);
+                            filestream.Flush();
+                            return "Photos" +file.FileName;
+                        }
+                    }
+                    else
+                    {
+                        return "Failed";
+                    }
+
+            }catch (Exception ex)
+            {
+                 return ex.Message.ToString();
+            }
         }
     }
 }

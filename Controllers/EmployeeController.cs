@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.interfaces;
 using WebApplication1.Models;
+using WebApplication1.Repositry;
 
 namespace WebApplication1.Controllers
 {
@@ -82,5 +83,17 @@ namespace WebApplication1.Controllers
             return Ok("your Employee is created ");
 
         }
+
+        [HttpPost,Route("UploadFile")]
+
+        public IActionResult uploadfile(IFormFile obj)
+        {
+            string response = employee.UploadImage(obj);
+            return Ok(response);
+            //return Ok();
+
+        }
+
+
     }
 }

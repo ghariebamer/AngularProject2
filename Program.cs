@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("corsPolicy");
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

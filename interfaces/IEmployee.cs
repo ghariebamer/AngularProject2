@@ -15,5 +15,7 @@ namespace WebApplication1.interfaces
         public void createEmployee(Employee employee);
 
         public void deleteEmployee(int id);
+
+        public string UploadImage(IFormFile obj);
     }
 }
