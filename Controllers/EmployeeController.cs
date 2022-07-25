@@ -86,9 +86,9 @@ namespace WebApplication1.Controllers
 
         [HttpPost,Route("UploadFile")]
 
-        public IActionResult uploadfile(IFormFile obj)
+        public IActionResult uploadfile(IFormFile file)
         {
-            string response = employee.UploadImage(obj);
+            string response = employee.UploadImage(file);
             return Ok(response);
             //return Ok();
 

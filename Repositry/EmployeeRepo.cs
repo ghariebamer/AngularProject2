@@ -140,18 +140,23 @@ namespace WebApplication1.Repositry
 
         public string UploadImage(IFormFile file)
         {
-            try { 
-                    if (file.Length > 0)
+            try {
+                string folderPath = Directory.GetCurrentDirectory() + "/www.root/doc";
+                string fileName = Guid.NewGuid() + file.FileName;
+
+                if (file.Length > 0)
                     {
-                        if(!Directory.Exists(environment.WebRootPath+ "~\\Photos\\"))
+                        if(!Directory.Exists(folderPath))
                         {
-                            Directory.CreateDirectory(environment.WebRootPath + "~\\Photos\\");
+                            Directory.CreateDirectory(folderPath);
                         }
-                        using(FileStream filestream=System.IO.File.Create(environment.WebRootPath + "~\\Photos\\" + file.FileName))
+
+                   
+                    string filePath=Path.Combine(folderPath, fileName);
+                    using (var stream=new FileStream(filePath,FileMode.Create))
                         {
-                            file.CopyTo(filestream);
-                            filestream.Flush();
-                            return "Photos" +file.FileName;
+                            file.CopyTo(stream);
+                            return "file is " +file.FileName;
                         }
                     }
                     else

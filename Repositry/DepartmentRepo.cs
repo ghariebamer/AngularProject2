@@ -37,10 +37,10 @@ namespace WebApplication1.Repositry
                     CreateDate= rd["createddate"].ToString()
                 });
                 Departments=departments;
-                con.Close();
 
             }
             return Departments;
+            con.Close();
 
         }
 
