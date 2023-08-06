@@ -1,4 +1,5 @@
-﻿using WebApplication1.Models;
+﻿using System.Data;
+using WebApplication1.Models;
 
 namespace WebApplication1.interfaces
 {
@@ -17,5 +18,7 @@ namespace WebApplication1.interfaces
         public void deleteEmployee(int id);
 
         public string UploadImage(IFormFile obj);
+
+        public DataTable ExportFile();
     }
 }

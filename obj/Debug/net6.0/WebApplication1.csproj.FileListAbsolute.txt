@@ -31,3 +31,10 @@ D:\project2\WebApplication1\obj\Debug\net6.0\refint\WebApplication1.dll
 D:\project2\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 D:\project2\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 D:\project2\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\ClosedXML.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\Irony.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\SixLabors.Fonts.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\XLParser.dll

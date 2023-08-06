@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ClosedXML.Excel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.interfaces;
 using WebApplication1.Models;
@@ -92,6 +93,23 @@ namespace WebApplication1.Controllers
             return Ok(response);
             //return Ok();
 
+        }
+
+        [HttpGet("ExportEmployeesExcel")]
+
+        public ActionResult ExportEmployeesExcel()
+        {
+            var empData= employee.ExportFile();
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+               var sheet1= wb.AddWorksheet(empData, "EmployeeSheet");
+                sheet1.Column(1).Style.Font.FontColor = XLColor.Red;
+                using (MemoryStream sm = new MemoryStream())
+                {
+                    wb.SaveAs(sm);
+                    return File(sm.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "EmployeeExport.xlsx");
+                }
+            }
         }
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using ClosedXML.Excel;
+using Microsoft.Extensions.Options;
 using System.Data;
 using System.Data.SqlClient;
 using WebApplication1.interfaces;
@@ -168,6 +169,36 @@ namespace WebApplication1.Repositry
             {
                  return ex.Message.ToString();
             }
+        }
+
+        public DataTable ExportFile()
+        {
+            var empData = GetEmpForExport();
+            return empData;
+        }
+
+        private DataTable GetEmpForExport()
+        {
+            var _list = getEmployees();
+
+            DataTable dt = new DataTable();
+            dt.TableName= "Employees";
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("Name",typeof(string));
+            dt.Columns.Add("Department",typeof(string));
+            dt.Columns.Add("DateOfJoining",typeof(string));
+            dt.Columns.Add("PhotoName", typeof(string));
+            dt.Columns.Add("CreatedDate", typeof(string));
+            dt.Columns.Add("CreatedBy", typeof(int));
+            if (_list.Count > 0)
+            {
+                foreach (var item in _list)
+                {
+                    dt.Rows.Add(item.Id, item.Name, item.Department, item.dateofjoining, item.photofileName, item.CreateDate, item.CreateBy);
+                }
+            }
+
+            return dt;
         }
     }
 }
