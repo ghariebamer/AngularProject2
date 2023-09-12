@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication1.interfaces;
 using WebApplication1.Models;
 using WebApplication1.Repositry;
+using LoggerService;
 
 namespace WebApplication1.Controllers
 {
@@ -12,9 +13,14 @@ namespace WebApplication1.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployee employee;
-        public EmployeeController(IEmployee employee)
+
+
+        private readonly ILoggerManager logger;
+
+        public EmployeeController(IEmployee employee, ILoggerManager _Logger)
         {
             this.employee = employee;
+            logger = _Logger;
         }
 
         [HttpGet,Route("GetallEmployees")]
@@ -23,12 +29,14 @@ namespace WebApplication1.Controllers
         {
             try
             {
+
                 var list = employee.getEmployees();
                 return Ok(list);
+
             }
             catch (Exception  ex)
             {
-
+                logger.LogError(ex.Message);
                 return BadRequest(ex.Message);  
             }
          
@@ -44,6 +52,7 @@ namespace WebApplication1.Controllers
             }
             catch (Exception ex)
             {
+                logger.LogError(ex.Message);
 
                 return BadRequest(ex.Message);
             }
@@ -63,6 +72,7 @@ namespace WebApplication1.Controllers
             }
             catch (Exception ex)
             {
+                logger.LogError(ex.Message);
 
                 return BadRequest(ex.Message);
             }

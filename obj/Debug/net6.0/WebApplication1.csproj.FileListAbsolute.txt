@@ -38,3 +38,8 @@ D:\project2\WebApplication1\bin\Debug\net6.0\Irony.dll
 D:\project2\WebApplication1\bin\Debug\net6.0\SixLabors.Fonts.dll
 D:\project2\WebApplication1\bin\Debug\net6.0\System.IO.Packaging.dll
 D:\project2\WebApplication1\bin\Debug\net6.0\XLParser.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\nlog.config
+D:\project2\WebApplication1\bin\Debug\net6.0\NLog.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\LoggerService.dll
+D:\project2\WebApplication1\bin\Debug\net6.0\LoggerService.pdb
