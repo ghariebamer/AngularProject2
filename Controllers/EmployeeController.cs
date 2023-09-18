@@ -15,12 +15,10 @@ namespace WebApplication1.Controllers
         private readonly IEmployee employee;
 
 
-        private readonly ILoggerManager logger;
 
-        public EmployeeController(IEmployee employee, ILoggerManager _Logger)
+        public EmployeeController(IEmployee employee)
         {
             this.employee = employee;
-            logger = _Logger;
         }
 
         [HttpGet,Route("GetallEmployees")]
@@ -36,7 +34,6 @@ namespace WebApplication1.Controllers
             }
             catch (Exception  ex)
             {
-                logger.LogError(ex.Message);
                 return BadRequest(ex.Message);  
             }
          
@@ -52,7 +49,6 @@ namespace WebApplication1.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message);
 
                 return BadRequest(ex.Message);
             }
@@ -72,7 +68,6 @@ namespace WebApplication1.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(ex.Message);
 
                 return BadRequest(ex.Message);
             }

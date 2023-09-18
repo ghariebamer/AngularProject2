@@ -38,6 +38,7 @@ namespace WebApplication1.Repositry
                 });
                 Departments=departments;
 
+
             }
             return Departments;
             con.Close();
@@ -61,7 +62,6 @@ namespace WebApplication1.Repositry
                 department.CreateDate = rd["createddate"].ToString();
                 department.CreateBy = Convert.ToInt32(rd["createBy"]);
                 dep = department;
-            
             }
             con.Close();
             return dep;
