@@ -13,9 +13,6 @@ namespace WebApplication1.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployee employee;
-
-
-
         public EmployeeController(IEmployee employee)
         {
             this.employee = employee;
@@ -116,6 +113,8 @@ namespace WebApplication1.Controllers
                 }
             }
         }
+
+     
 
 
     }

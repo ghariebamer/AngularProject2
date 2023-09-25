@@ -118,6 +118,18 @@
               "target": "Package",
               "version": "[0.102.0, )"
             },
+            "Polybioz.HtmlRenderer.PdfSharp.Core": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Select.HtmlToPdf": {
+              "target": "Package",
+              "version": "[23.1.0, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[23.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

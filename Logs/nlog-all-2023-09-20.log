@@ -1,0 +1,17 @@
+2023-09-20 10:31:37.2340||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:31:38.3699||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:31:39.2619||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:31:40.0099||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:32:44.5492||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:34:01.4897||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:46:52.6539||ERROR|LoggerService.LoggerManger|Unable to resolve service for type 'PdfSharpCore.Fonts.IFontResolver' while attempting to activate 'WebApplication1.Controllers.EmployeeController'. 
+2023-09-20 10:52:00.8705||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:02:17.9413||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:05:40.5496||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:06:02.7649||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:07:49.9375||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:12:24.2547||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:12:26.9339||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 11:12:27.7260||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 12:40:11.7034||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
+2023-09-20 12:41:22.0248||ERROR|LoggerService.LoggerManger|The type initializer for 'PdfSharpCore.Utils.FontResolver' threw an exception. 
